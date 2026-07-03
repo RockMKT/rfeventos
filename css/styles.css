@@ -518,6 +518,19 @@ a { text-decoration: none; color: inherit; }
   transform: scale(1.04);
   filter: brightness(1);
 }
+
+/* Desktop gallery: first card spans both rows (vertical), cards 2-3 are horizontal */
+.espacio-card:first-child {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.espacio-card:first-child img {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: unset;
+}
 .espacio-info {
   padding: 0.8rem 0 0;
   display: flex;
@@ -1083,6 +1096,8 @@ a { text-decoration: none; color: inherit; }
   .video-secondary { width: 52%; height: 46%; }
 
   .espacios-cards { grid-template-columns: 1fr; }
+  .espacio-card:first-child { grid-row: span 1; height: auto; }
+  .espacio-card:first-child img { flex: unset; aspect-ratio: 4/3; }
 
   .foto-grid {
     grid-template-columns: 1fr 1fr;
