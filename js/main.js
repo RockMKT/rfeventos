@@ -188,6 +188,7 @@ acordHeaders.forEach(header => {
 /* ═══════════════════════════════════════════════
    CARRUSEL MENÚ (coverflow)
 ═══════════════════════════════════════════════ */
+const carruselTrack = document.getElementById('carruselTrack');
 const carruselItems = document.querySelectorAll('.carrusel-item');
 const totalItems    = carruselItems.length;
 
@@ -214,6 +215,14 @@ function updateCarrusel() {
       item.style.zIndex     = '1';
     }
   });
+
+  // Desplazar el track para centrar el item activo
+  const clip      = carruselTrack.parentElement;
+  const clipWidth = clip.offsetWidth;
+  const itemWidth = carruselItems[0].offsetWidth;
+  const gapPx     = parseFloat(getComputedStyle(carruselTrack).gap) || 24;
+  const translateX = clipWidth / 2 - carruselIndex * (itemWidth + gapPx) - itemWidth / 2;
+  carruselTrack.style.transform = `translateX(${translateX}px)`;
 }
 
 document.querySelector('.carrusel-prev').addEventListener('click', () => {
@@ -233,6 +242,21 @@ carruselItems.forEach((item, i) => {
     updateCarrusel();
   });
 });
+
+// Swipe táctil para mobile
+let touchStartX = 0;
+carruselTrack.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+carruselTrack.addEventListener('touchend', (e) => {
+  const delta = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(delta) > 40) {
+    carruselIndex = delta > 0
+      ? (carruselIndex + 1) % totalItems
+      : (carruselIndex - 1 + totalItems) % totalItems;
+    updateCarrusel();
+  }
+}, { passive: true });
 
 updateCarrusel();
 

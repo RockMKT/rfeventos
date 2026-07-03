@@ -73,6 +73,7 @@ body {
   line-height: 1.6;
   transition: background-color var(--transition-slow), color var(--transition-slow);
   overflow-x: hidden;
+  font-synthesis: none; /* evita que iOS adelgace la fuente custom */
 }
 
 /* Todos los párrafos: gotham-book, peso fino */
@@ -714,14 +715,18 @@ a { text-decoration: none; color: inherit; }
   padding: 2rem 0;
 }
 
+.carrusel-clip {
+  flex: 1;
+  overflow: hidden;
+}
+
 .carrusel-track {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.5rem;
-  flex: 1;
-  overflow: hidden;
   padding: 2rem 0;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .carrusel-item {
@@ -1087,7 +1092,17 @@ a { text-decoration: none; color: inherit; }
   .nav-links, .nav-right { display: none; }
   .hamburger { display: flex; }
 
-  .section-title { font-size: clamp(2.2rem, 10vw, 3.5rem);}
+  .section-title { font-size: clamp(2.2rem, 10vw, 3.5rem); font-weight: 400; }
+
+  /* iOS sintetiza pesos ultra-finos en fuentes custom — igualar al desktop */
+  body { font-weight: 400; }
+  p,
+  .nosotros-text p,
+  .espacios-text p,
+  .acord-body p,
+  .hero-tagline,
+  .presupuesto-sub,
+  .footer-center p { font-weight: 400 !important; }
 
   .nosotros-videos {
     height: 300px;
@@ -1112,9 +1127,7 @@ a { text-decoration: none; color: inherit; }
   .footer-logo { margin: 0 auto; }
   .footer-logo-text { align-items: center; }
 
-  .carrusel-item:nth-child(1),
-  .carrusel-item:nth-child(5) { display: none; }
-  .carrusel-item img { width: 160px; }
+  .carrusel-item img { width: 140px; }
 
   .presupuesto-titulo { font-size: clamp(2.5rem, 12vw, 5rem); }
 }
@@ -1127,11 +1140,7 @@ a { text-decoration: none; color: inherit; }
   .foto-grid { grid-template-columns: 1fr; }
   .foto-tall { grid-row: span 1; }
 
-  .carrusel-item:nth-child(1),
-  .carrusel-item:nth-child(2),
-  .carrusel-item:nth-child(4),
-  .carrusel-item:nth-child(5) { display: none; }
-  .carrusel-item:nth-child(3) { transform: scale(1); }
+  .carrusel-item img { width: 120px; }
 
   .floating-btns { bottom: 1.5rem; left: 1.2rem; }
   .float-btn { width: 40px; height: 40px; }
