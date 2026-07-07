@@ -379,6 +379,10 @@ a { text-decoration: none; color: inherit; }
   /* filter: brightness(0) invert(1); */
 }
 
+.hero-logo--main {
+  width: 220px;
+}
+
 /* Fallback si no hay logo */
 .hero-logo-text, .pres-logo-text, .footer-logo-text {
   display: flex;

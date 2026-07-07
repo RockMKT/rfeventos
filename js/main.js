@@ -14,6 +14,7 @@ const translations = {
 
     hero_tagline: 'Celebrá cumpleaños, aniversarios, fiestas privadas, lanzamientos, conferencias, desfiles, casamientos, after office o brunchs en el cuarto piso del Hotel Savoy. No importa la ocasión, lo importante es que suceda...',
 
+    nosotros_titulo: 'DISEÑÁ LA NOCHE A TU MEDIDA',
     nosotros_btn:  'REDES SOCIALES',
     nosotros_texto: 'RF Eventos es la unidad especializada de Rock&Feller\'s dedicada al desarrollo de encuentros sociales y corporativos en un entorno diseñado para experiencias privadas. Ubicado en el 4.º piso del Hotel Savoy, este espacio fue concebido para ofrecer un formato diferencial respecto al funcionamiento habitual del restaurante. Se trata de una propuesta pensada específicamente para eventos, donde la gastronomía, el servicio y la ambientación se integran en una experiencia más personalizada.',
 
@@ -53,6 +54,7 @@ const translations = {
 
     hero_tagline: 'Celebrate birthdays, anniversaries, private parties, launches, conferences, fashion shows, weddings, after-office or brunches on the fourth floor of Hotel Savoy. Whatever the occasion, what matters is that it happens...',
 
+    nosotros_titulo: 'DESIGN THE NIGHT TO YOUR LIKING',
     nosotros_btn:  'SOCIAL MEDIA',
     nosotros_texto: 'RF Eventos is the specialized unit of Rock&Feller\'s dedicated to the development of social and corporate gatherings in an environment designed for private experiences. Located on the 4th floor of Hotel Savoy, this space was conceived to offer a differential format from the restaurant\'s regular operation. It is a proposal designed specifically for events, where gastronomy, service and ambiance integrate into a more personalized experience.',
 
