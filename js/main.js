@@ -8,8 +8,8 @@ const translations = {
     nav_nosotros:    'NOSOTROS',
     nav_espacios:    'ESPACIOS',
     nav_eventos:     'EVENTOS',
-    nav_fotografia:  'FOTOGRAFÍA',
-    nav_menu:        'MENÚ',
+    nav_fotografia:  'ESCENOGRAFÍA',
+    // nav_menu:        'MENÚ',
     nav_presupuesto: 'PRESUPUESTO',
 
     hero_h1: 'RF Eventos — Salón de eventos corporativos y sociales en Rosario',
@@ -49,8 +49,8 @@ const translations = {
     nav_nosotros:    'ABOUT US',
     nav_espacios:    'SPACES',
     nav_eventos:     'EVENTS',
-    nav_fotografia:  'PHOTOGRAPHY',
-    nav_menu:        'MENU',
+    nav_fotografia:  'SCENOGRAPHY',
+    // nav_menu:        'MENU',
     nav_presupuesto: 'GET A QUOTE',
 
     hero_h1: 'RF Eventos — Corporate and social event venue in Rosario',
