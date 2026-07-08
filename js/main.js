@@ -12,6 +12,7 @@ const translations = {
     nav_menu:        'MENÚ',
     nav_presupuesto: 'PRESUPUESTO',
 
+    hero_h1: 'RF Eventos — Salón de eventos corporativos y sociales en Rosario',
     hero_tagline: 'Celebrá cumpleaños, aniversarios, fiestas privadas, lanzamientos, conferencias, desfiles, casamientos, after office o brunchs en el cuarto piso del Hotel Savoy. No importa la ocasión, lo importante es que suceda...',
 
     nosotros_titulo: 'DISEÑÁ LA NOCHE A TU MEDIDA',
@@ -52,6 +53,7 @@ const translations = {
     nav_menu:        'MENU',
     nav_presupuesto: 'GET A QUOTE',
 
+    hero_h1: 'RF Eventos — Corporate and social event venue in Rosario',
     hero_tagline: 'Celebrate birthdays, anniversaries, private parties, launches, conferences, fashion shows, weddings, after-office or brunches on the fourth floor of Hotel Savoy. Whatever the occasion, what matters is that it happens...',
 
     nosotros_titulo: 'DESIGN THE NIGHT TO YOUR LIKING',
@@ -213,6 +215,8 @@ const carruselTrack = document.getElementById('carruselTrack');
 const carruselItems = document.querySelectorAll('.carrusel-item');
 const totalItems    = carruselItems.length;
 
+if (carruselTrack && totalItems > 0) {
+
 function updateCarrusel() {
   carruselItems.forEach((item, i) => {
     item.classList.remove('active');
@@ -281,6 +285,8 @@ carruselTrack.addEventListener('touchend', (e) => {
 
 updateCarrusel();
 
+} // fin if (carruselTrack)
+
 /* ═══════════════════════════════════════════════
    LIGHTBOX FOTOGRAFÍA
 ═══════════════════════════════════════════════ */
@@ -291,8 +297,9 @@ const fotoItems    = document.querySelectorAll('.foto-item');
 
 fotoItems.forEach(item => {
   item.addEventListener('click', () => {
-    const src = item.querySelector('img').src;
-    lightboxImg.src = src;
+    const img = item.querySelector('img');
+    if (!img) return;
+    lightboxImg.src = img.src;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
