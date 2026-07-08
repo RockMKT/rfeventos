@@ -152,6 +152,25 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealEls.forEach(el => revealObserver.observe(el));
 
 /* ═══════════════════════════════════════════════
+   LAZY LOAD DE VIDEOS DE FONDO
+═══════════════════════════════════════════════ */
+const lazyVideos = document.querySelectorAll('video.lazy-video');
+
+const lazyVideoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      video.src = video.dataset.src;
+      video.load();
+      video.play().catch(() => {});
+      lazyVideoObserver.unobserve(video);
+    }
+  });
+}, { rootMargin: '200px' });
+
+lazyVideos.forEach(video => lazyVideoObserver.observe(video));
+
+/* ═══════════════════════════════════════════════
    EVENTOS TABS
 ═══════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════
@@ -370,13 +389,6 @@ function applyTranslations(lang) {
       }
     }
   });
-
-  // Actualizar descripción activa de evento
-  const activeTab = document.querySelector('.evento-tab.active');
-  if (activeTab && eventoPanelDesc) {
-    const cat = activeTab.dataset.cat;
-    eventoPanelDesc.textContent = eventDescriptions[lang][cat];
-  }
 
   // Actualizar lang del HTML
   document.documentElement.lang = lang;

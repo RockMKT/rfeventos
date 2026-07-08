@@ -6,19 +6,13 @@
 
 @font-face {
   font-family: "gotham-book";
-  src: url('gotham.otf');
+  src: url('../assets/gotham.otf');
 }
 
 
 @font-face {
   font-family: "gotham-medium";
-  src: url('gotham-medium.otf');
-}
-
-
-@font-face {
-  font-family: "majestic";
-  src: url('Majesti-Banner-Book.otf');
+  src: url('../assets/gotham-medium.otf');
 }
 
 
@@ -34,7 +28,6 @@
   --border: rgba(255,255,255,0.08);
   --transition: 0.4s ease;
   --transition-slow: 0.6s ease;
-  --font-cursiva: 'majestic', 'gotham-book';
   --font-main: 'gotham-book', 'Gill Sans', 'Optima', sans-serif;
   --font-medium: 'gotham-medium', 'Gill Sans';
   --font-display: 'gotham-book', 'Garamond', serif;
@@ -88,7 +81,6 @@ p {
 .nosotros-text p,
 .espacios-text p,
 .acord-body p,
-.eventos-panel-desc,
 .hero-tagline,
 .presupuesto-sub,
 .footer-center p {
@@ -153,25 +145,6 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
 }
 .btn-filled:hover { opacity: 0.88; transform: translateY(-1px); }
-
-.btn-cta {
-  display: inline-block;
-  padding: 1.1rem 3rem;
-  background: var(--gold);
-  color: #111;
-  font-family: var(--font-main);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
-  cursor: pointer;
-}
-.btn-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(201,168,76,0.3);
-}
 
 /* ─── REVEAL ANIMATIONS ────────────────────── */
 .reveal {
@@ -383,32 +356,6 @@ a { text-decoration: none; color: inherit; }
   width: 220px;
 }
 
-/* Fallback si no hay logo */
-.hero-logo-text, .pres-logo-text, .footer-logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
-  margin: 0 auto 1.5rem;
-}
-.logo-rf {
-  font-family: var(--font-main);
-  font-weight: 200;
-  font-size: 2.8rem;
-  letter-spacing: 0.05em;
-  color: var(--text);
-  line-height: 1;
-}
-.logo-star { color: var(--gold); margin: 0 0.15em; }
-.logo-eventos {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.6rem;
-  color: var(--gold);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-}
-
 .hero-tagline {
   font-size: 0.85rem;
   font-weight: 300;
@@ -565,7 +512,6 @@ a { text-decoration: none; color: inherit; }
 
 #segundos{
   color: #C9A84C;
-  /* font-family: 'majestic'; */
 }
 
 /* ════════════════════════════════════════════════
@@ -914,16 +860,6 @@ a { text-decoration: none; color: inherit; }
   gap: 1.8rem;
 }
 
-.presupuesto-logo img {
-  width: 150px;
-  margin: 0 auto;
-  filter: brightness(0) invert(1);
-}
-
-.pres-logo-text {
-  margin: 0 auto;
-}
-
 .presupuesto-titulo {
   font-family: var(--font-main);
   font-weight: 100;
@@ -969,15 +905,6 @@ a { text-decoration: none; color: inherit; }
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--border);
 }
-
-.footer-logo {
-  width: 120px;
-  filter: brightness(0) invert(1) opacity(0.6);
-}
-
-.footer-logo-text { margin: 0; }
-.footer-logo-text .logo-rf { font-size: 1.8rem; color: rgba(255,255,255,0.6); }
-.footer-logo-text .logo-eventos { font-size: 1rem; }
 
 .footer-center p {
   font-size: 0.78rem;
@@ -1128,8 +1055,6 @@ a { text-decoration: none; color: inherit; }
     text-align: center;
   }
   .footer-redes { align-items: center; }
-  .footer-logo { margin: 0 auto; }
-  .footer-logo-text { align-items: center; }
 
   .carrusel-item img { width: 170px; }
 
