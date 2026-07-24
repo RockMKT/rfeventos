@@ -294,7 +294,7 @@ a { text-decoration: none; color: inherit; }
 }
 .mobile-menu.open {
   display: flex;
-  max-height: 400px;
+  max-height: 560px;
 }
 .mobile-menu a {
   font-size: 0.72rem;
@@ -308,7 +308,14 @@ a { text-decoration: none; color: inherit; }
 }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover { color: var(--gold); }
-.mobile-btn { margin-top: 1rem; color: var(--gold) !important; border-color: var(--gold) !important; }
+.mobile-menu a.mobile-btn {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
 
 /* ═══════════════════════════════════════════════
    HERO
